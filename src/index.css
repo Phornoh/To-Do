@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f4f5f7; --card: #fff; --text: #1f2937; --muted: #6b7280; --line: #e5e7eb; --accent: #4f46e5;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.05);
+  --lowc: #15803d; --lowb: rgba(34,197,94,.15);
+  --medc: #b45309; --medb: rgba(245,158,11,.18);
+  --highc: #b91c1c; --highb: rgba(239,68,68,.15);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111827; --card: #1f2937; --text: #f3f4f6; --muted: #9ca3af; --line: #374151; --accent: #818cf8;
+    --shadow: 0 1px 3px rgba(0,0,0,.4);
+    --lowc: #4ade80; --medc: #fbbf24; --highc: #f87171;
+  }
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body { background: var(--bg); color: var(--text); font-family: 'Noto Sans Thai', system-ui, sans-serif; margin: 0; }
+
+.card { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); }
+.inp { background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: .6rem .8rem; outline: none; min-width: 0; }
+.inp:focus { border-color: var(--accent); }
+.btn { background: var(--accent); color: #fff; border-radius: 10px; padding: .6rem .9rem; display: inline-flex; align-items: center; gap: .35rem; font-weight: 500; cursor: pointer; }
+.item { transition: opacity .25s, transform .25s, max-height .25s, margin .25s; max-height: 120px; overflow: hidden; }
+.item.out { opacity: 0; transform: translateX(30px); max-height: 0; margin: 0 !important; }
+.badge { font-size: .75rem; font-weight: 600; padding: .15rem .6rem; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+.p-low { color: var(--lowc); background: var(--lowb); }
+.p-medium { color: var(--medc); background: var(--medb); }
+.p-high { color: var(--highc); background: var(--highb); }
+.tab { padding: .4rem .9rem; border-radius: 999px; font-size: .9rem; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.tab.on { background: var(--accent); color: #fff; }
+.chk { width: 22px; height: 22px; flex: none; border: 2px solid var(--line); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; }
+.chk.on { background: var(--accent); border-color: var(--accent); }
+.ico { background: none; border: 0; color: var(--muted); padding: .35rem; border-radius: 8px; cursor: pointer; }
+.ico:hover:not(:disabled) { color: var(--highc); }
