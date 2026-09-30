@@ -24,7 +24,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Noto Sans Thai',
 .inp { background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: .6rem .8rem; outline: none; min-width: 0; }
 .inp:focus { border-color: var(--accent); }
 .btn { background: var(--accent); color: #fff; border-radius: 10px; padding: .6rem .9rem; display: inline-flex; align-items: center; gap: .35rem; font-weight: 500; cursor: pointer; }
-.item { transition: opacity .25s, transform .25s, max-height .25s, margin .25s; max-height: 120px; overflow: hidden; }
+.item { transition: opacity .25s, transform .25s, max-height .25s, margin .25s; max-height: 200px; overflow: hidden; }
 .item.out { opacity: 0; transform: translateX(30px); max-height: 0; margin: 0 !important; }
 .badge { font-size: .75rem; font-weight: 600; padding: .15rem .6rem; border-radius: 999px; cursor: pointer; white-space: nowrap; }
 .p-low { color: var(--lowc); background: var(--lowb); }
@@ -36,3 +36,12 @@ body { background: var(--bg); color: var(--text); font-family: 'Noto Sans Thai',
 .chk.on { background: var(--accent); border-color: var(--accent); }
 .ico { background: none; border: 0; color: var(--muted); padding: .35rem; border-radius: 8px; cursor: pointer; }
 .ico:hover:not(:disabled) { color: var(--highc); }
+
+.side-btn { display: flex; align-items: center; justify-content: space-between; gap: .75rem; width: 100%; padding: .5rem .75rem; border-radius: 10px; font-size: .92rem; color: var(--text); cursor: pointer; white-space: nowrap; }
+.side-btn.on { background: var(--accent); color: #fff; }
+.side-btn .cnt { font-size: .75rem; opacity: .75; }
+.tag { display: inline-flex; align-items: center; gap: .3rem; font-size: .72rem; color: var(--muted); }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.due { font-size: .72rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; color: var(--muted); background: var(--line); }
+.due.over { color: var(--highc); background: var(--highb); }
+.due.today { color: var(--medc); background: var(--medb); }
